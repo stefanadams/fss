@@ -1,0 +1,7 @@
+#!/bin/sh
+
+/usr/bin/smbclient -U fss -c "lcd /data/school/FSS;prompt;get Finger.pk" //hostname/fssbiowedge "$(cat /data/school/FSS/fssbiowedge.secret)"
+/usr/bin/smbclient -U fss -c "lcd /data/school/FSS/POR;prompt;recurse;mget *" //hostname/StartUp "$(cat /data/school/FSS/fssbiowedge.secret)"
+/usr/bin/smbclient -U fss -c "lcd /data/school/FSS/POR;prompt;recurse;mget SSH" //hostname/ApplicationData "$(cat /data/school/FSS/fssbiowedge.secret)"
+/usr/bin/smbclient -U fss -c "lcd /data/school/FSS/POSS;prompt;recurse;mget *.zip" //hostname/Backups$ "$(cat /data/school/FSS/fssbiowedge.secret)"
+# Put Follett.pk on Library
